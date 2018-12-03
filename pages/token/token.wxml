@@ -1,4 +1,4 @@
-<view wx:if="{{canIUse}}">
+<view wx:if="{{canToken}}">
     <view class='header'>
         <image src='../images/wx_login.png'></image>
     </view>
@@ -8,9 +8,10 @@
         <text>获得你的区块链地址</text>
     </view>
  
-    <button class='bottom' type='primary' bindtap='userToken' lang="zh_CN">
+    <button class='bottom' disabled='{{isToken || tokening}}' type='primary' bindtap='userToken' lang="zh_CN">
         授权
     </button>
+    <loading hidden="{{!tokening}}">授权中</loading>
 </view>
  
-<view wx:else>请升级微信版本</view>
+<view wx:else class='header'>参数错误</view>

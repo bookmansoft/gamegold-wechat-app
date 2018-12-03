@@ -1,11 +1,11 @@
 {
   "pages":[
-    "pages/token/token",
     "pages/index/index",
     "pages/prop/index",
     "pages/order/order",
     "pages/login/login",
     "pages/cp/index",
+    "pages/token/token",
     "pages/logs/logs"
   ],
   "window":{

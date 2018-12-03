@@ -68,13 +68,17 @@ Page({
         that.setData({paying: false});
         let path = that.data.returl
         console.log('returl', path)
-        that.orderNotify(that.data.notifyurl)
-        wx.navigateTo({
-          url: '/pages/cp/index?path=' + path
-        })
+        that.orderNotify(that.data.notifyurl);
+        setTimeout(function (){
+          wx.navigateTo({
+            url: '/pages/cp/index?path=' + path
+          })
+        }, 1500);
+
       }
     })
   },
+
   orderNotify: function(notifyurl) {
     let that = this;
     console.log('notifyurl', notifyurl);
@@ -82,6 +86,7 @@ Page({
       url: notifyurl,
       data: {
         func: 'OrderNotify',         //action
+        cid: that.data.cid,
         sn: that.data.sn,
         status: 1,
         msg: 'success',
