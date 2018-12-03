@@ -1,0 +1,20 @@
+<view wx:if='{{act!=""}}'>
+    <view class='header'>
+        <image src='{{prop_icon}}'></image>
+    </view>
+ 
+    <view class='content'>
+        <view>接收道具</view>
+        <text>道具名称：{{prop_name}}</text>
+        <text wx:if='{{isReceive}}'>{{retMsg}}</text>
+    </view>
+ 
+    <button wx:if='{{act=="rec"}}' class='bottom' disabled='{{isReceive || receiveing}}' type='primary' lang='zh_CN' bindtap='proPreceive'>
+        接收
+    </button>
+    <button wx:if='{{act=="send"}}' class='bottom' open-type='share' type='primary' title='道具分享'  lang='zh_CN'>
+        分享
+    </button>
+    <loading hidden="{{!receiveing}}">接收中</loading>
+</view>
+<view wx:else class='header'>分享出错啦</view>

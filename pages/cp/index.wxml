@@ -1,0 +1,6 @@
+<!-- wxml -->
+<!-- 指向微信公众平台首页的web-view -->
+<web-view wx:if="{{hasOpenId}}" src="{{path}}"></web-view>
+<view wx:else class='content'>
+    <text>{{motto}}</text>
+</view>

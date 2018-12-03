@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/token/token",
+    "pages/index/index",
+    "pages/prop/index",
+    "pages/order/order",
+    "pages/login/login",
+    "pages/cp/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

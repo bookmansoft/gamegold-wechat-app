@@ -1,0 +1,16 @@
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <image src='../images/wx_login.png'></image>
+    </view>
+ 
+    <view class='content'>
+        <view>游戏申请获取以下权限</view>
+        <text>获得你的区块链地址</text>
+    </view>
+ 
+    <button class='bottom' type='primary' bindtap='userToken' lang="zh_CN">
+        授权
+    </button>
+</view>
+ 
+<view wx:else>请升级微信版本</view>

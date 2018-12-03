@@ -1,0 +1,17 @@
+<view wx:if='{{canIPay}}'>
+    <view class='header'>
+        <image src='../images/gamegold.png'></image>
+    </view>
+ 
+    <view class='content'>
+        <view>当前支付</view>
+        <text>数量：{{price/10000000}}</text>
+        <text wx:if='{{isPay}}'>{{payMsg}}</text>
+    </view>
+ 
+    <button class='bottom' disabled='{{isPay || paying}}' type='primary' lang='zh_CN' bindtap='payNow'>
+        立即支付
+    </button>
+    <loading hidden="{{!paying}}">正在支付</loading>
+</view>
+<view wx:else class='header'>支付参数错误</view>
