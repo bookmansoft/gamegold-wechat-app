@@ -22,7 +22,7 @@ Page({
 
     } else {
       app.userInfoReadyCallback = res => {
-        console.log('userInfoReadyCallback');
+        console.log('userInfoReadyCallback', res.path);
         this.setData({hasOpenId: true, path: res.path });
       }
     }
