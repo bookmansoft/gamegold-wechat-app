@@ -59,7 +59,7 @@ App({
           //判断是否有回调
           if (that.userInfoReadyCallback) {
             that.userInfoReadyCallback({ 
-              path: that.globalData.walletClientPath + '/?openid=' + that.globalData.openid
+              path: that.globalData.walletClientPath + '/?openid=' + that.globalData.openid + '&t=' + new Date().getTime()
             })
           }
         }
@@ -73,8 +73,8 @@ App({
     userInfo: null,
     //walletServerPath: 'http://192.168.1.9:9101/index.html',
     walletServerPath: 'https://mini.gamegold.xin/gg-wechat-server/index.html',
-    //walletClientPath: 'https://mini.gamegold.xin/wallet',
-    walletClientPath: 'https://mini.gamegold.xin/gg-wechat-client/',
+    //walletClientPath: 'http://192.168.1.9:8101',
+    walletClientPath: 'https://mini.gamegold.xin/gg-wechat-client',
     token: '9bcf8939a9c96e14700b2209463af411'
   },
 

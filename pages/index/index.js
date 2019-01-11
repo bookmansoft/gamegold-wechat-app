@@ -11,14 +11,12 @@ Page({
   },
   onLoad: function (options) {
     if (app.globalData.openid != '') {
-      console.log('app.globalData.openid');
-      var path = '';
+      let path = app.globalData.walletClientPath + '/?openid=' + app.globalData.openid + '&t=' + new Date().getTime()
       if (options.hasOwnProperty('path')) {
-        path = options.path;
-      } else {
-        path = app.globalData.walletClientPath + '/?openid=' + app.globalData.openid
-      }
-      this.setData({hasOpenId: true, path: path })
+        path += '&path=' + options.path;
+      } 
+      console.log('path111', path)
+      this.setData({ hasOpenId: true, path: path })
 
     } else {
       app.userInfoReadyCallback = res => {

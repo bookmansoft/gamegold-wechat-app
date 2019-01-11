@@ -1,11 +1,7 @@
-<view wx:if='{{canIPay}}'>
-    <view class='header'>
-        <image src='../images/gamegold.png'></image>
-    </view>
- 
+<view wx:if='{{canIPay}}'> 
     <view class='content'>
-        <view>当前支付</view>
-        <text>数量：{{price/100000}} (千克)</text>
+        <view>产品：{{productInfo}}</view>
+        <text>金额：{{price/100}} 元</text>
         <text wx:if='{{isPay}}'>{{payMsg}}</text>
     </view>
  

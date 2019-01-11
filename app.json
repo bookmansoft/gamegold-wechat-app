@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/prop/index",
     "pages/order/order",
+    "pages/wepay/order",
     "pages/login/login",
     "pages/cp/index",
     "pages/token/token",

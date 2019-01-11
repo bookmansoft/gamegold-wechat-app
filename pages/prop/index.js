@@ -90,7 +90,8 @@ Page({
 
   //返回我的道具
   goBackMyProps: function() {
-    let path = app.globalData.walletClientPath + '/#/mine/myProps?openid=' + app.globalData.openid + '&t=' + (new Date().getTime())
+    //let path = app.globalData.walletClientPath + '?path=/mine&openid=' + app.globalData.openid + '&t=' + (new Date().getTime())
+    let path = '/mine'
     wx.navigateTo({
       url: '/pages/index/index?path=' + path
     })
