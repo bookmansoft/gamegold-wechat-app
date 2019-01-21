@@ -4,6 +4,7 @@
     </view>
  
     <view class='content'>
+        <view> </view>
         <view>当前支付</view>
         <text>数量：{{price/100000}} (千克)</text>
         <text wx:if='{{isPay}}'>{{payMsg}}</text>

@@ -24,5 +24,8 @@ Page({
         this.setData({hasOpenId: true, path: res.path });
       }
     }
+  },
+  onShow: function() {
+    console.log('onshow')
   }
 })

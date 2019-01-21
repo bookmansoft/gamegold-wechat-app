@@ -1,0 +1,14 @@
+<view>
+    <view class='header'>
+        <image src='{{gameUrl}}'></image>
+    </view>
+
+    <view class='content'>
+        <view> </view>
+        <text>游戏：{{game}}</text>
+    </view>
+ 
+    <button class='bottom' type='primary' lang='zh_CN' bindtap='enterGame'>
+        立即体验
+    </button>
+</view>

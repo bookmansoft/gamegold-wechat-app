@@ -1,20 +1,46 @@
-// pages/wxpay/order.js
+// pages/test/test.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cid: '',
+    addr: '',
+    game: '',
+    gameUrl: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      cid: options.cid,
+      addr: options.addr,
+      game: options.game,
+      gameUrl: options.gameUrl
+    });
   },
 
+  enterGame: function() {
+    console.log("ok")
+    wx.navigateToMiniProgram({
+      appId: 'wxdb571c43fa1ff06b',
+      path: 'pages/index/index?addr='+ this.data.addr + '&cid=' + this.data.cid,
+      extraData: {
+
+      },
+      envVersion: 'trial',
+      success(res) {
+        // 打开成功
+        console.log('success', res)
+      },
+      fail(res) {
+        console.log('fail', res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -75,9 +75,12 @@ Page({
               that.orderNotify(app.globalData.walletServerPath);
               let path = that.data.returl
               setTimeout(function () {
+                /*
                 wx.navigateTo({
                   url: '/pages/index/index?path=' + path
                 })
+                */
+                wx.navigateBack()
               }, 1500);
             },
             'fail': function (res) {

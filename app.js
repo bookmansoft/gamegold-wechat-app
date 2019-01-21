@@ -14,6 +14,7 @@ App({
         this.getOpenId(res.code);
       }
     })
+    
     // 获取用户信息
     /*
     wx.getSetting({

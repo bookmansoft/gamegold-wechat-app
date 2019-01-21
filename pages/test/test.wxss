@@ -3,13 +3,13 @@
     border-bottom: 1px solid #ccc;
     text-align: center;
     width: 650rpx;
-    height: 300rpx;
+    height: 480rpx;
     line-height: 450rpx;
 }
  
 .header image {
-    width: 450rpx;
-    height: 192rpx;
+    width: 640rpx;
+    height: 480rpx;
 }
  
 .content {

@@ -1,5 +1,6 @@
 <view wx:if='{{canIPay}}'> 
     <view class='content'>
+        <view></view>
         <view>产品：{{productInfo}}</view>
         <text>金额：{{price/100}} 元</text>
         <text wx:if='{{isPay}}'>{{payMsg}}</text>
