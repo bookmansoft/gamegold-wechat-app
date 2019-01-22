@@ -12,7 +12,7 @@ Page({
   },
 
   //发送后台，注册用户个人信息
-  regUserProfile: function (userInfo) {
+  regUserProfile: function (userInfo, encryptedData, iv) {
     if (app.globalData.openid=='') {
       wx.showModal({title: '警告',content: '网络未准备好，请稍后再试',showCancel: false,confirmText: '返回'});
       return;
@@ -29,6 +29,9 @@ Page({
         province: userInfo.province,     //所在省,
         city: userInfo.city,             //所在市,
         country: userInfo.country,       //所在国家,
+        encryptedData: encryptedData,
+        sessionKey: app.globalData.sessionKey,
+        iv: iv,
         control: 'wechat',               //控制器
         oemInfo: { token: app.globalData.token }
       },
@@ -52,7 +55,8 @@ Page({
   
   //获取用户信息接口
   getUserInfo: function (e) {
-    console.log(e.detail.errMsg);
+    console.log(e);
+    console.log('code', app.globalData.code);
     if (e.detail.errMsg !== "getUserInfo:ok") {
       wx.showModal({
         title: '警告',
@@ -67,8 +71,9 @@ Page({
       })
     } else {
       app.globalData.userInfo = e.detail.userInfo
+      console.log('e.detail.encryptedData', e.detail.encryptedData)
       //开始注册用户个人信息
-      this.regUserProfile(app.globalData.userInfo);
+      this.regUserProfile(app.globalData.userInfo, e.detail.encryptedData, e.detail.iv);
     }
   }
 

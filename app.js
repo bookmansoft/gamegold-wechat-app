@@ -10,7 +10,9 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log('res', res);
         console.log('code', res.code);
+        this.globalData.code = res.code
         this.getOpenId(res.code);
       }
     })
@@ -55,8 +57,9 @@ App({
 
           //保持全局变量openid
           that.globalData.openid = res.data.detail.openid;
+          that.globalData.sessionKey = res.data.detail.sessionKey;
           console.log('openid', that.globalData.openid);
-
+          console.log('sessionKey', that.globalData.sessionKey);
           //判断是否有回调
           if (that.userInfoReadyCallback) {
             that.userInfoReadyCallback({ 
@@ -71,6 +74,8 @@ App({
   //定义全局变量
   globalData: {
     openid: '',
+    code: '',
+    sessionKey: '',
     userInfo: null,
     //walletServerPath: 'http://192.168.1.9:9101/index.html',
     walletServerPath: 'https://mini.gamegold.xin/gg-wechat-server/index.html',
